@@ -1,7 +1,6 @@
 import os
 import numpy as np
 from PIL import Image
-import math
 
 from Screen import *
 from Camera import *
@@ -13,6 +12,7 @@ def main():
 
     while(True):
         frame = userCamera.getFrame()
+        userScreen.onStep()
         userScreen.redrawAll(frame)
 
         # Check if user presses ESC to exit loop

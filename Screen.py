@@ -1,5 +1,6 @@
 import cv2
 import time
+import math
 from datetime import datetime
 
 class Screen:
@@ -21,9 +22,10 @@ class Screen:
 
     def redrawAll(self, img):
         # Show the next image displayed
-        cv2.imshow('HUD', img)
         cv2.putText(img, "Mk7", (10, 50), self.font, 2, self.HUDText, 2)
         cv2.putText(img, ("Date: " + self.date_time), (10,75), self.font, 0.5,
                      self.HUDText,1)       
-        cv2.putText(img, ("FPS: "+ str(self.math.floor(self.fps))), (10, 95),
+        cv2.putText(img, ("FPS: "+ str(math.floor(self.fps))), (10, 95),
                      self.font, 0.5, self.HUDText, 1)      
+
+        cv2.imshow('HUD', img)
