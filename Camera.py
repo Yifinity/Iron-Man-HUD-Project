@@ -5,18 +5,26 @@ from datetime import datetime
 
 class Camera:
     def __init__(self):
+        self.vidWidth = 800
+        self.vidHeight = 480
+
         self.cam = cv2.VideoCapture(0)
         self.cam.set(cv2.CAP_PROP_FPS, 30)
 
-        self.cam.set(3, vidWidth) # set video width
-        self.cam.set(4, vidHeight) # set video height
-        pass
+        self.cam.set(3, self.vidWidth) # set video width
+        self.cam.set(4, self.vidHeight) # set video height
 
-    def onStep(self):
-        pass
+    def getFrame(self):
+        # Get us our next image
+        ret, img = self.cam.read()
+        return img
 
     def redrawAll(self):
         pass
+
+    def terminateStream(self):
+        self.cam.release()
+        cv2.destroyAllWindows()
 
 
 

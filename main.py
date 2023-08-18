@@ -11,21 +11,17 @@ def main():
     userCamera = Camera()
     userScreen = Screen()
 
-
     while(True):
-        
-        ret, img = cam.read()
-        
-        cv2.imshow('HUD', img)
-        
+        frame = userCamera.getFrame()
+        userScreen.redrawAll(frame)
+
         # Check if user presses ESC to exit loop
         k = cv2.waitKey(1)
-
         if k == 27:
             break
-
-    cam.release()
-    cv2.destroyAllWindows()
+    
+    # Outside the loop, we've ended the stream. 
+    userCamera.terminateStream()
     exit()
 
 main()
