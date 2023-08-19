@@ -14,8 +14,9 @@ class Screen:
     def onStep(self):
         self.now = datetime.now() # Current Date and Time.
         # Format time 
-        self.date_time = self.now.strftime("%m/%d/%Y, %H:%M:%S")
+        self.date_time = self.now.strftime("%B %d, %Y | %I:%M%p")
 
+        # FPS Calculation
         self.timeNow = time.time()
         self.fps = 1 / (self.timeNow - self.startTime)
         self.startTime = self.timeNow
@@ -23,7 +24,7 @@ class Screen:
     def redrawAll(self, img):
         # Show the next image displayed
         cv2.putText(img, "Mk7", (10, 50), self.font, 2, self.HUDText, 2)
-        cv2.putText(img, ("Date: " + self.date_time), (10,75), self.font, 0.5,
+        cv2.putText(img, (self.date_time), (10,75), self.font, 0.5,
                      self.HUDText,1)       
         cv2.putText(img, ("FPS: "+ str(math.floor(self.fps))), (10, 95),
                      self.font, 0.5, self.HUDText, 1)      
