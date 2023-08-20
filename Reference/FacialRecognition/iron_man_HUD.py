@@ -9,7 +9,6 @@ from datetime import datetime
 from iron_man_HUDTrain import getImagesAndLabels
 
 #  As a convention, we will show the SQL keywords in uppercase and the parts of the command that we are adding (such as the table and column names) will be shown in lowercase.
-
 conn = sqlite3.connect('names.sqlite')
 cur = conn.cursor()
 
