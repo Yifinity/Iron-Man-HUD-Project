@@ -2,6 +2,7 @@ import cv2
 
 from Recognizer import *
 from Features.Clock import *
+from Features.CPU import *
 
 class Screen:
     def __init__(self):
@@ -30,7 +31,7 @@ class Screen:
         
         # Add Features to our screen
         for feature in self.features:
-            feature.redraw()
+            feature.redraw(img)
 
         # Display our image
         cv2.imshow('HUD', img)

@@ -11,7 +11,6 @@ class Recognizer:
         faces = self.face_detector.detectMultiScale(gray, 1.3, 5)
         cv2.putText(img, f'Faces Found: {len(faces)}', (10,135),  cv2.FONT_HERSHEY_DUPLEX, 0.5, (255, 200, 0), 2)
         # Present Detected Faces:
-        print(faces)
         for (x,y,w,h) in faces:
             # Draw Rectangle at that location
             cv2.rectangle(img, (x,y), (x+w,y+h), (255, 200, 0), 2)
