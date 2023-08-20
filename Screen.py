@@ -39,6 +39,7 @@ class Screen:
         cv2.imshow('HUD', img)
 
     def keyPress(self, k):
+        print(k)
         # F1 key toggles if we're using the recognizer
         if k == 112: 
             self.useRecognizer = not self.useRecognizer
