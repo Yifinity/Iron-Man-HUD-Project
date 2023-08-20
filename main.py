@@ -19,7 +19,6 @@ def main():
         k = cv2.waitKey(1)
         if k == 27:
             break
-    
         else:
             userScreen.keyPress(k)
     
