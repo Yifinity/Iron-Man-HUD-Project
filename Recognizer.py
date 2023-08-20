@@ -1,3 +1,5 @@
+import cv2
+
 class Recognizer:
     def __init__(self):
         # File to detect faces
