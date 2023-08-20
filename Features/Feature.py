@@ -7,8 +7,7 @@ import math
 import time
 
 # CPU imports
-from gpioZero import *
-
+from gpiozero import CPUTemperature
 
 class Feature:
     def __init__(self):
