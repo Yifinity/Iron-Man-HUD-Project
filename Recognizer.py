@@ -14,7 +14,6 @@ class Recognizer:
         print(faces)
         for (x,y,w,h) in faces:
             # Draw Rectangle at that location
-
             cv2.rectangle(img, (x,y), (x+w,y+h), (255, 200, 0), 2)
     
 

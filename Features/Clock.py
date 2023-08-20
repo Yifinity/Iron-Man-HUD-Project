@@ -5,7 +5,7 @@ class Clock(Feature):
     def __init__(self):
         # Inherit nessisary fonts
         super().__init__(self)
-        self.timePos = (10, 75)
+        self.timePos = (10, 50)
         self.fpsPos = (10, self.timePos[1] + 20)
 
     def onStep(self):
