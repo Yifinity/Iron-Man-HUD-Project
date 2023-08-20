@@ -7,11 +7,12 @@ from Features.CPU import *
 class Screen:
     def __init__(self):
         # Define sceen variables
-        self.HUDText = (255,200,0)
-        self.HUDColor = (207,172,50)
+        self.HUDText = (235,199,103)
+        # self.HUDColor = (207,172,50)
         self.font = cv2.FONT_HERSHEY_DUPLEX
         self.startTime = 0 
 
+        # Screen Features
         self.useRecognizer = False
         self.recognizer = Recognizer()
 
