@@ -20,6 +20,9 @@ def main():
         if k == 27:
             break
     
+        else:
+            userScreen.keyPress(k)
+    
     # Outside the loop, we've ended the stream. 
     userCamera.terminateStream()
     exit()

@@ -3,6 +3,8 @@ import time
 import math
 from datetime import datetime
 
+from Recognizer import *
+
 class Screen:
     def __init__(self):
         # Define sceen variables
@@ -26,8 +28,7 @@ class Screen:
 
     def redrawAll(self, img):
         if self.useRecognizer:
-            self.recognizer.showRecognized(img)
-            
+            self.recognizer.showFaces(img)
 
         # Show the next image displayed
         cv2.putText(img, "Mk7", (10, 50), self.font, 2, self.HUDText, 2)
@@ -36,3 +37,8 @@ class Screen:
         cv2.putText(img, ("FPS: "+ str(math.floor(self.fps))), (10, 95),
                      self.font, 0.5, self.HUDText, 1)      
         cv2.imshow('HUD', img)
+
+    def keyPress(self, k):
+        # F1 key toggles if we're using the recognizer
+        if k == 112: 
+            self.useRecognizer = not self.useRecognizer
