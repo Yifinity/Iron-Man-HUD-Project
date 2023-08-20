@@ -1,10 +1,5 @@
 # Feature for FPS and Time
-
-from datetime import datetime
-import math
-import time
-import Feature
-
+from Feature import *
 
 class Clock(Feature):
     def __init__(self):
