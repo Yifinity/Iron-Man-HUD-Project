@@ -4,7 +4,7 @@ from Features.Feature import *
 class Clock(Feature):
     def __init__(self):
         # Inherit nessisary fonts
-        super().__init__(self)
+        super().__init__()
         # Put on right side
         self.tempPos = (700, 50)
 

@@ -1,11 +1,10 @@
 # Feature for FPS and Time
 from Features.Feature import *
 
-
 class Clock(Feature):
     def __init__(self):
         # Inherit nessisary fonts
-        super().__init__(self)
+        super().__init__()
         self.timePos = (10, 50)
         self.fpsPos = (10, self.timePos[1] + 20)
 
