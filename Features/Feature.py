@@ -1,8 +1,13 @@
 # Parent Class for global fonts
 import cv2
+
+# Clock imports
 from datetime import datetime
 import math
 import time
+
+# CPU imports
+from gpioZero import *
 
 
 class Feature:
