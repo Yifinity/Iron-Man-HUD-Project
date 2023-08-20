@@ -1,5 +1,6 @@
 # Get CPU Info
-from Feature import *
+from Features.Feature import *
+
 class Clock(Feature):
     def __init__(self):
         # Inherit nessisary fonts

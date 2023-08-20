@@ -15,7 +15,8 @@ class Screen:
         self.recognizer = Recognizer()
 
         self.features = [
-            Clock()
+            Clock(), 
+            CPU()
         ]
  
     def onStep(self):
