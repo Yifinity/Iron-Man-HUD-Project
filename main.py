@@ -15,6 +15,7 @@ def main():
         userScreen.onStep()
         userScreen.redrawAll(frame)
 
+
         # Check if user presses ESC to exit loop
         k = cv2.waitKey(1)
         if k == 27:

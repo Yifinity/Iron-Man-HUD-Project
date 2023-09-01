@@ -34,7 +34,9 @@ class Screen:
         for feature in self.features:
             feature.redraw(img)
 
+        # print(img.shape[:2])
         # Display our image
+        # img = cv2.flip(img, -1)
         cv2.imshow('HUD', img)
 
 

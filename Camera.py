@@ -9,7 +9,7 @@ class Camera:
         self.vidHeight = 480
 
         self.cam = cv2.VideoCapture(0)
-        self.cam.set(cv2.CAP_PROP_FPS, 30)
+        self.cam.set(cv2.CAP_PROP_FPS, 45)
 
         self.cam.set(3, self.vidWidth) # set video width
         self.cam.set(4, self.vidHeight) # set video height
