@@ -2,11 +2,14 @@
 import cv2
 import time
 from datetime import datetime
+from time import sleep
+from picamera import PiCamera
 
 class Camera:
     def __init__(self, app):
         # Get our app instance
         self.app = app
+
         self.vidWidth = 800
         self.vidHeight = 480
 
@@ -15,6 +18,15 @@ class Camera:
 
         self.cam.set(3, self.vidWidth) # set video width
         self.cam.set(4, self.vidHeight) # set video height
+
+        # Citation: PiCam Documentation from 
+        # https://picamera.readthedocs.io/en/release-1.13/recipes1.html#capturing-to-a-stream
+        self.piCam = PiCamera()
+        self.piCam.start_preview()
+        # Wait for 2 milliseconds
+        sleep(2)
+        print("PiCam Calibration Successful")
+
 
     def getFrame(self):
         # Get us our next image
