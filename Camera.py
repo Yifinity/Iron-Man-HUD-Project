@@ -4,7 +4,9 @@ import time
 from datetime import datetime
 
 class Camera:
-    def __init__(self):
+    def __init__(self, app):
+        # Get our app instance
+        self.app = app
         self.vidWidth = 800
         self.vidHeight = 480
 

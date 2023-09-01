@@ -5,26 +5,24 @@ from PIL import Image
 from Screen import *
 from Camera import *
 
-def main():
-    # Create our objects to run 
-    userCamera = Camera()
-    userScreen = Screen()
 
-    while(True):
-        frame = userCamera.getFrame()
-        userScreen.onStep()
-        userScreen.redrawAll(frame)
+class App:
+    def __init__(self):
+        # Create our objects to run 
+        self.userCamera = Camera(self)
+        self.userScreen = Screen(self)
 
+    def onStep(self):
+        self.userScreen.onStep()
 
-        # Check if user presses ESC to exit loop
+    def redrawAll(self):
+        frame = self.userCamera.getFrame()
+        self.userScreen.redrawAll(frame)
+    
+    def onKeyPress(self):
         k = cv2.waitKey(1)
         if k == 27:
-            break
+            self.userCamera.terminateStream()
+            exit()
         else:
-            userScreen.keyPress(k)
-    
-    # Outside the loop, we've ended the stream. 
-    userCamera.terminateStream()
-    exit()
-
-main()
+            self.userScreen.keyPress(k)

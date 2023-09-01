@@ -9,6 +9,4 @@ def main():
         app.redrawAll()
         app.onKeyPress()
 
-    exit()
-
 main()
