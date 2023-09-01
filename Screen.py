@@ -7,7 +7,7 @@ from Features.CPU import *
 class Screen:
     def __init__(self, app):
         self.app = app
-        
+
         # Define sceen variables
         self.HUDText = (235,199,103)
         # self.HUDColor = (207,172,50)
@@ -37,7 +37,6 @@ class Screen:
             feature.redraw(img)
 
         # Display our image
-        # img = cv2.flip(img, -1)
         cv2.imshow('HUD', img)
 
     def keyPress(self, k):

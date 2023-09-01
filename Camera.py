@@ -18,7 +18,7 @@ class Camera:
 
     def getFrame(self):
         # Get us our next image
-        ret, img = self.cam.read()
+        captured, img = self.cam.read()
         return img
 
     def redrawAll(self):
