@@ -5,6 +5,8 @@ from PIL import Image
 from Screen import *
 from Camera import *
 
+from Scenes.RunScene import *
+
 
 class App:
     def __init__(self):
@@ -12,12 +14,17 @@ class App:
         self.userCamera = Camera(self)
         self.userScreen = Screen(self)
 
+        self.scenes = [
+            RunScene(self)
+        ]
+
+        self.currentScene = self.scenes[0]
+
     def onStep(self):
-        self.userScreen.onStep()
+        self.currentScene.onStep()
 
     def redrawAll(self):
-        frame = self.userCamera.getFrame()
-        self.userScreen.redrawAll(frame)
+        self.currentScene.redrawAll()
     
     def onKeyPress(self):
         k = cv2.waitKey(1)
