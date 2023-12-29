@@ -1,27 +1,29 @@
-import os
-import numpy as np
-from PIL import Image
+# import os
+import numpy
+import cv2
+# from PIL import Image
 
-from Screen import *
-from Camera import *
+# Set Dimensions
+screenWidth = 800
+screenHeight = 480 
+
+# Define / Setup Camera 
+cam = cv2.VideoCapture(0)
+cam.set(cv2.CAP_PROP_FPS, 30)
 
 def main():
-    # Create our objects to run 
-    userCamera = Camera()
-    userScreen = Screen()
-
-    while(True):
-        frame = userCamera.getFrame()
-        userScreen.onStep()
-        userScreen.redrawAll(frame)
-
-        # Check if user presses ESC to exit loop
+    while True:
+        ret, image = cam.read()
+        image = cv2.resize(image, (screenWidth, screenHeight), fx = 0, fy =  0, interpolation = cv2.INTER_CUBIC)
+        height, width = image.shape[:2]
+        print("Height:", height, "by Width:", width)
+        cv2.imshow('IMAGETEST', image)
         k = cv2.waitKey(1)
-        if k == 27:
+        if k != -1:
             break
-    
-    # Outside the loop, we've ended the stream. 
-    userCamera.terminateStream()
-    exit()
+
+    cam.release()
+    cv2.destroyAllWindows()
+
 
 main()
